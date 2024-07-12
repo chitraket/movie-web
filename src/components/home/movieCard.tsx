@@ -1,7 +1,7 @@
 /** @format */
 
 import { Card, CardContent, CardTitle } from "../ui/card";
-import { Badge, badgeVariants } from "../ui/badge";
+import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { Heart } from "lucide-react";
 import { useAppDispatch } from "../../store/hooks";
@@ -23,9 +23,9 @@ const MovieCard = ({ ...props }: TProps) => {
     const navigate = useNavigate();
     const {currentUserInfo} = useAuth()
     
-    const isFavorite = currentUserInfo?.favorite?.some((item)=> item['Title'] === Title)
+    const isFavorite = currentUserInfo?.favorite?.some((item:any)=> item['Title'] === Title)
 
-    const handleFavorite = (props) => {
+    const handleFavorite = (props:TProps) => {
       if(currentUserInfo?.email && currentUserInfo?.name) {
         if(isFavorite){
           dispatch(removeFavorite(props.Title))

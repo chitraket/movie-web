@@ -33,7 +33,7 @@ const useHomePage = () => {
     await handleApiCall(state.page - 1,state.search)
     }
   }
-  const handleApiCall = async (page,search) => {
+  const handleApiCall = async (page:number,search:string) => {
     await fetchData({
       url: config.BASE_URL,
       method: "GET",
@@ -56,7 +56,7 @@ const useHomePage = () => {
   useEffect(() => {
     handleApiCall(state?.page,state?.search);
   }, []);
-  
+
   return {
     data: response?.Search || [],
     handleSearch,

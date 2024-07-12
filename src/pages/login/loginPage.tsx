@@ -20,8 +20,8 @@ import toast from "react-hot-toast";
 
 const LoginPage = () => {
 
-  const emailRef = useRef<HTMLInputElement>(null);
-  const passwordRef = useRef<HTMLInputElement>(null);
+  const emailRef:any = useRef<HTMLInputElement>(null);
+  const passwordRef:any = useRef<HTMLInputElement>(null);
 
   const [loading, setLoading] = useState(false);
 
@@ -30,9 +30,9 @@ const LoginPage = () => {
 
   const handleLoginSubmit = () => {
       setLoading(true)
-      const email = emailRef.current.value;
-      const password = passwordRef.current.value;
-      const userInfo = user?.find((item) => item.email === email && item.password === password)
+      const email = emailRef?.current?.value;
+      const password = passwordRef?.current?.value;
+      const userInfo = user?.find((item:any) => item?.email === email && item.password === password)
       if(userInfo){
         dispatch(loginUser({email:email,password:password}))
         toast.success('Successfully Login :)')     

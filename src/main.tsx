@@ -10,14 +10,14 @@ import { store } from "./store";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import { Toaster } from "react-hot-toast";
-const persistedStore = persistStore(store)
+const persistedStore = persistStore(store);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistedStore}>
         <RouterProvider router={router} />
-        <Toaster/>
+        <Toaster />
       </PersistGate>
     </Provider>
   </React.StrictMode>

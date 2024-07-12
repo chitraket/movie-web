@@ -1,7 +1,7 @@
 /* eslint-disable no-unsafe-optional-chaining */
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+const initialState:any = {
     user:[],
     currentUser:{
         email:'',
@@ -23,17 +23,17 @@ const authSlice = createSlice({
             state.currentUser = initialState.currentUser
         },
         addFavorite:(state, action) => {
-            const userIndex = state.user.findIndex((item)=> item.email === state.currentUser.email)
+            const userIndex = state.user.findIndex((item:any)=> item.email === state.currentUser.email)
             state.user[userIndex] = {
                 ...state.user[userIndex],
                 favorite:[...state.user[userIndex].favorite, action.payload]
             }
         },
         removeFavorite:(state, action) => {
-            const userIndex = state.user.findIndex((item)=> item.email === state.currentUser.email)
+            const userIndex = state.user.findIndex((item:any)=> item.email === state.currentUser.email)
             state.user[userIndex] = {
                 ...state.user[userIndex],
-                favorite:state.user[userIndex].favorite?.filter((item)=> item['Title'] !== action.payload)
+                favorite:state.user[userIndex].favorite?.filter((item:any)=> item['Title'] !== action.payload)
             }
         }
     }

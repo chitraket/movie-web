@@ -2,7 +2,7 @@ import { useAppSelector } from "@/store/hooks"
 
 const useAuth = () => {
     const {user, currentUser} = useAppSelector((state)=> state.auth)
-    const userInfo = user?.find((item) => item?.email === currentUser?.email)
+    const userInfo:any = user?.find((item:any) => item?.email === currentUser?.email)
     if(userInfo) {
         return {
             success:true,

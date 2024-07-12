@@ -16,7 +16,7 @@ const useAxios = () => {
     };
   }, []);
 
-  const fetchData = async ({ url, method, data = {}, params = {} }) => {
+  const fetchData = async ({ url, method, data = {}, params = {} }:any) => {
     setLoading(true);
     setResponse(null)
     try {
@@ -28,7 +28,7 @@ const useAxios = () => {
         cancelToken: axios.CancelToken.source().token,
       });
       setResponse(result);
-    } catch (error) {
+    } catch (error:any) {
       if (axios?.isCancel(error)) {
         console.error("Request cancelled", error.message);
       }

@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardContent } from "../../components/ui/card";
 import { Button } from "../../components/ui/button";
 import { useAuth } from "../../hook";
@@ -22,7 +21,7 @@ const SettingsPage = () => {
                         <p className="text-sm text-muted-foreground">{currentUserInfo?.email || ''}</p>
                     </div>
                 </div>
-                <Button onClick={() => dispatch(loginUser())}>
+                <Button onClick={() => dispatch(loginUser({}))}>
                     Logout
                 </Button>
             </CardContent>

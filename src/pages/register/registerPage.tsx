@@ -16,9 +16,9 @@ import { registerUser } from "@/store/reducers/auth";
 import { LoaderCircle } from "lucide-react";
 
 const RegisterPage = () => {
-  const nameRef = useRef<HTMLInputElement>(null);
-  const emailRef = useRef<HTMLInputElement>(null);
-  const passwordRef = useRef<HTMLInputElement>(null);
+  const nameRef:any = useRef<HTMLInputElement>(null);
+  const emailRef:any = useRef<HTMLInputElement>(null);
+  const passwordRef:any = useRef<HTMLInputElement>(null);
 
   const [loading, setLoading] = useState(false);
 
@@ -28,9 +28,9 @@ const RegisterPage = () => {
   const handleRegisterSubmit = () => {
     setLoading(true);
     const data = {
-      name: nameRef.current.value,
-      email: emailRef.current.value,
-      password: passwordRef.current.value,
+      name: nameRef?.current?.value || '',
+      email: emailRef?.current?.value || '',
+      password: passwordRef?.current?.value || '',
       favorite: []
     };
     dispatch(registerUser(data));
